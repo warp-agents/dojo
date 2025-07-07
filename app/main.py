@@ -14,6 +14,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",          # your dev origin
+        "http://127.0.0.1:3000",
         "https://playground-gcvm.onrender.com"  # plus any prod domains
     ], 
     allow_credentials=True,
