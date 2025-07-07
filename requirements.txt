@@ -1,0 +1,50 @@
+# requirements.txt
+
+# --- Core Web Framework ---
+fastapi
+pydantic
+pydantic-settings
+python-dotenv
+uvicorn[standard]  # Includes high-performance libraries like httptools
+python-multipart # For file uploads (e.g., for DOCX, PDF)
+aiofiles         # For async file operations with FastAPI
+
+# --- AI & LLM SDKs ---
+openai
+google-generativeai
+ollama
+tiktoken         # For token counting with OpenAI models
+cognee==0.1.26   # Pinned version as requested
+
+# --- Data Handling & Manipulation ---
+pandas
+openpyxl         # Required by pandas for reading/writing Excel files
+lxml             # High-performance XML/HTML parser, often used by other libs
+
+# --- Document Processing ---
+pypdf            # Modern library for PDF handling
+python-docx      # For .docx files
+PyPDF2           # Another PDF library, sometimes useful for specific tasks
+
+# --- Web Scraping ---
+firecrawl     # Correct package name for firecrawl
+
+# --- OCR & Computer Vision ---
+# IMPORTANT: Render's standard instances do not have GPUs.
+# Use the CPU-only version of onnxruntime.
+onnxruntime
+rapidocr-onnxruntime
+
+# --- Database ---
+SQLAlchemy       # For database interaction (ORM)
+# You will also need a database driver, e.g., psycopg2-binary for PostgreSQL
+# psycopg2-binary
+
+# --- Utilities & Testing ---
+evaluate         # For model evaluation (Hugging Face)
+sentence-transformers # For creating embeddings
+faker            # For generating fake data (useful for testing)
+func_timeout     # To add timeouts to functions
+
+# Note: pyngrok is a local development tool to expose your local server.
+# It is NOT needed for deployment on Render and should not be in requirements.txt.
