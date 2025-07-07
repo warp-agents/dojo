@@ -28,3 +28,7 @@ class GenerateLiteRequest(BaseModel):
 
 class SearchRequest(BaseModel):
     prompt: str
+
+class HealthResponse(BaseModel):
+    status: str
+    message: str
