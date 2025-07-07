@@ -14,7 +14,7 @@ openai
 google-generativeai
 ollama
 tiktoken         # For token counting with OpenAI models
-cognee==0.1.26   # Pinned version as requested
+cognee   # Pinned version as requested
 
 # --- Data Handling & Manipulation ---
 pandas

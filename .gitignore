@@ -1,6 +1,17 @@
-# .gitignore
+.env
+.venv/
+venv/
+env/
+
+# Python
 __pycache__/
 *.pyc
-.env
-venv/
+*.pyo
+*.pyd
+
+# IDEs
 .idea/
+.vscode/
+
+# Temp files
+uploads/
