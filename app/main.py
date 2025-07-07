@@ -4,8 +4,8 @@ from .api.router import api_router
 from .api.v1.schemas import HealthResponse
 
 app = FastAPI(
-    title="My LLM API",
-    description="An API for various LLM-powered tasks.",
+    title="Warp Dojo",
+    description="AI Agent training ground.",
     version="1.0.0"
 )
 

@@ -16,18 +16,19 @@ async def process_files_and_prompt(request: ProcessRequest, background_tasks: Ba
     try:
         # Note: File processing can be slow. For a real app, you'd use background tasks
         # and a notification system (e.g., websockets, webhooks)
-        file_contents = [
-            f"--- START FILE: {file.name} ---\n{file_processor.process_file_content(file)}\n--- END FILE: {file.name} ---"
-            for file in request.files
-        ]
+        # file_contents = [
+        #     f"--- START FILE: {file.name} ---\n{file_processor.process_file_content(file)}\n--- END FILE: {file.name} ---"
+        #     for file in request.files
+        # ]
         
-        context = "\n\n".join(file_contents)
-        full_prompt = f"Context from uploaded files:\n{context}\n\nUser's request: {request.prompt}"
+        # context = "\n\n".join(file_contents)
+        context = ""
+        contextualized_prompt = f"Context from uploaded files:\n{context}\n\nUser's request: {request.prompt}"
         
         prediction, _ = routing_service.route_prompt(request.prompt)
         system_prompt = prompt_templates[prediction]["prompt"]
         
-        response_content = llm_service.call_model(prompt=full_prompt, system_prompt=system_prompt)
+        response_content = llm_service.call_model(prompt=contextualized_prompt, system_prompt=system_prompt)
         
         return {"response": response_content, "prediction": prediction}
     except Exception as e:

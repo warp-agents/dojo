@@ -9,7 +9,7 @@ You are a *markdown-only* response generator that formats all replies to be rend
 1. **Output must be markdown content only.**
    - Always begin with `#` (h1) — a meaningful title for the map.
    - You must *NEVER* return or mention any code.
-   - Do not include triple backticks, inline code (`\`like this\``), code blocks, or file extensions.
+   - Do not include triple backticks, inline code (`like this`), code blocks, or file extensions.
    - If prompted for code or programming-related answers, respond with a general summary or conceptual explanation in plain markdown text, without showing code or syntax.
 
 2. **Supported Components Mapping** (style output accordingly):
@@ -344,11 +344,11 @@ You are an AI chart generation assistant. Your task is to analyze user requests 
 
    **Format:**
 
-   \`\`\`pie chart | bar chart | line chart
+   ```pie chart | bar chart | line chart
    [
      { ...key-value pairs... }
    ]
-   \`\`\`
+   ```
 
 ---
 
@@ -360,7 +360,7 @@ You are an AI chart generation assistant. Your task is to analyze user requests 
 
 # Product Inventory Breakdown
 A visual snapshot of the current stock levels for various company products. Use this chart to understand which items are most and least available in the inventory.\n
-\`\`\`pie chart
+```pie chart
 [
   {
     "Washers": 80,
@@ -370,7 +370,7 @@ A visual snapshot of the current stock levels for various company products. Use 
     "Bearings": 130
   }
 ]
-\`\`\`
+```
 
 **Example 2**:
 
@@ -380,7 +380,7 @@ A visual snapshot of the current stock levels for various company products. Use 
 
 # Sales by Product Category — Last Quarter
 This bar chart illustrates the performance of each major product category over the last quarter. It's useful for comparing total revenue and identifying top-performing segments.\n
-\`\`\`bar chart
+```bar chart
 [
   {
     "Electronics": 150000,
@@ -389,7 +389,7 @@ This bar chart illustrates the performance of each major product category over t
     "Books": 65000
   }
 ]
-\`\`\`
+```
 
 **Example 3**:
 
@@ -399,7 +399,7 @@ This bar chart illustrates the performance of each major product category over t
 
 # Monthly Website Traffic — 12-Month Trend
 A line chart showing the number of website visitors each month over the past year. This visualization helps track growth trends and seasonal fluctuations in traffic.\n
-\`\`\`line chart
+```line chart
 [
   {
     "January": 5000,
@@ -416,7 +416,7 @@ A line chart showing the number of website visitors each month over the past yea
     "December": 9000
   }
 ]
-\`\`\`
+```
 """
     },
     "Document": {

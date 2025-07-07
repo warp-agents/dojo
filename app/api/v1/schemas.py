@@ -9,14 +9,8 @@ class FileData(BaseModel):
 class ProcessRequest(BaseModel):
     prompt: str
     model: str
-    files: List[FileData]
-
-class ProcessResponse(BaseModel):
-    message: str
-    processed_files: List[str]
-    prompt: str
-    model: str
-
+    files: Optional[List[FileData]] = []
+    
 class GenerateRequest(BaseModel):
     system_prompt: str
     prompt: str
