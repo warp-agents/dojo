@@ -12,7 +12,10 @@ app = FastAPI(
 # CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Be more specific in production!
+    allow_origins=[
+        "http://localhost:3000",          # your dev origin
+        "https://playground-gcvm.onrender.com"  # plus any prod domains
+    ], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
