@@ -3,7 +3,7 @@ from firecrawl import FirecrawlApp
 import json
 import logging
 
-from .schemas import ProcessRequest, GenerateRequest, GenerateLiteRequest, SearchRequest
+from .schemas import ProcessRequest, GenerateRequest, GenerateLiteRequest, SearchRequest, HealthResponse
 from ...services import file_processor, routing_service, llm_service
 from ...prompts.templates import prompt_templates, url_extraction_system_prompt, content_extraction_system_prompt
 from ...core.config import settings
@@ -91,3 +91,8 @@ async def search_and_summarize(request: SearchRequest):
     except Exception as e:
         logging.error(f"Error in /search endpoint: {e}")
         raise HTTPException(status_code=500, detail=str(e))
+    
+@router.get("/health", response_model=HealthResponse, tags=["Health"])
+async def health_check():
+    """Performs a health check of the API."""
+    return {"status": "healthy", "message": "FastAPI server is running"}
